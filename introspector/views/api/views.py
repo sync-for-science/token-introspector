@@ -31,7 +31,8 @@ def api_fhir_metadata():
         return jsonify({
             'introspected': fhir_base,
             'active': True,
-            'patient': patient
+            'patient': patient_fhir.json(),
+            'scope': 'Patient/*.read'
         })
     else:
         return jsonify({
